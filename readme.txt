@@ -48,7 +48,7 @@ In the left Sidebar click on PXslider
 
 Make settings for slider 
 
-Use the [pxslider] shortcode inside the wordpress post editor or use the <?php if(function_exists(‘pxslider’)) { pxslider(); } ?>  template Code inside the page template
+Use the [pxslider] shortcode inside the wordpress post editor or use the <?php if(function_exists('pxslider')) { pxslider(); } ?>  template Code inside the page template
 
 You are up are running now. Do share your feedback with us for the plugin.
 
