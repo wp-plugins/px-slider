@@ -10,7 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
    
 
 == Description ==
-Try this an awesome Parallax Slider. Cool plugin plugin to add a parallax effect to your web page. One click install and quick backend settings make it easy to use for you. 
+Try this an awesome Parallax Slider. Cool plugin plugin to add a parallax effect to your web page. One click install and quick backend settings make it easy to use for you.  
+Click here to see a Demo http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 
 === Features ===
 
@@ -19,6 +20,8 @@ Try this an awesome Parallax Slider. Cool plugin plugin to add a parallax effect
     Create your own template: If you want to do something creative yourself you can create your own template by just uploading the three layers of images and you are ready with your new template.
     Template Code/Short Code Ready: PXslider can be inserted anywhere on the page just use the Shortcode or if you want to insert it inside a page template you can use the template code too.
     Last but not the least Its FREEEEE
+
+Click here to see a Demo http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 
 
 
