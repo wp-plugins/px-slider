@@ -18,7 +18,7 @@ Try this an awesome Parallax Slider. Cool plugin plugin to add a parallax effect
     Ready-made Templates: PX Slider comes with 4 ready-made templates for you to choose from.
     Create your own template: If you want to do something creative yourself you can create your own template by just uploading the three layers of images and you are ready with your new template.
     Template Code/Short Code Ready: PXslider can be inserted anywhere on the page just use the Shortcode or if you want to insert it inside a page template you can use the template code too.
-    Last but not the least Its FREEEEEEE
+    Last but not the least Its FREEEEE
 
 
 
