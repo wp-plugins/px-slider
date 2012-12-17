@@ -4,7 +4,7 @@ Donate link: http://www.wpfruits.com
 Tags: parallax slider, cool parallax slider, slider plugin, plugin
 Requires at least: 2.8
 Tested up to: 3.5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
    
@@ -67,6 +67,8 @@ http://www.wpfruits.com/wp-content/uploads/2012/12/how-to-use.png
 
 == Changelog ==
 
+Version 1.0.1
+Fixed some jquery and style issues with WordPress 3.5 version
 
 
 == Upgrade notice ==

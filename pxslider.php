@@ -4,7 +4,7 @@ Plugin Name:PX Slider
 Plugin URI: 
 Description: This plugin creates a Px slider with multiple background.
 Author: Nishant Jain, rahulbrilliant2004, tikendramaitry
-Version: 1.0.0
+Version: 1.0.1
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
