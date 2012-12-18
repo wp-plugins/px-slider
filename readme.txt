@@ -63,7 +63,7 @@ For More Details please visit http://www.wpfruits.com/downloads/wp-plugins/px-sl
 An answer to that question.
 
 == Screenshots ==
-http://www.wpfruits.com/wp-content/uploads/2012/12/how-to-use.png
+1. The settings page.
 
 == Changelog ==
 
