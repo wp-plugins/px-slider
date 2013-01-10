@@ -1,14 +1,15 @@
 <?php
 /*
 Plugin Name:PX Slider
-Plugin URI: 
+Plugin URI: http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 Description: This plugin creates a Px slider with multiple background.
 Author: Nishant Jain, rahulbrilliant2004, tikendramaitry
-Version: 1.0.1
+Version: 1.2.0
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
 // include all required files
+define('PXSLIDERPATH', plugin_dir_path(__FILE__).'inc/front/thumb');
 include_once('inc/admin/pxups.php');
 include_once('scripts.php');
 include_once('inc/admin/px_admin-options.php');
@@ -17,6 +18,13 @@ function pxslider_defaults(){
 	    $default = array(
     	'cat_id' => 1,
     	'no_of_posts' =>3,
+		'customImgs' =>'false',
+		'img1url' =>'',
+		'img2url' =>'',
+		'img3url' =>'',
+		'img4url' =>'',	
+		'img5url' =>'',
+		'img6url' =>'',		
 		'bglayerSet' =>'Set-1',
 		'customBgs'=> 'false',
 		'bg1url'=>plugins_url('images/slide1.jpg',__FILE__),

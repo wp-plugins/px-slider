@@ -4,7 +4,7 @@ Donate link: http://www.wpfruits.com
 Tags: parallax slider, cool parallax slider, slider plugin, plugin
 Requires at least: 2.8
 Tested up to: 3.5
-Stable tag: 1.0.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
    
@@ -70,6 +70,11 @@ An answer to that question.
 Version 1.0.1
 Fixed some jquery and style issues with WordPress 3.5 version
 
+Version 1.2.0
+Added Custom Images option in admin panel.
+Fix some jquery issues with WordPress 3.5 version.
+Upload your own images instead of going through categories
+Fixed timthumb issue. 
 
 == Upgrade notice ==
 Please upgrade quickly

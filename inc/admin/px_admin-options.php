@@ -10,14 +10,44 @@ function pxslider_admin_page(){
 	<form method="post">
 	<?php $options = get_option('pxslider_options'); ?>
 		<?php echo pxslider_update(); ?>
-		<div class="metabox-holder" style="width: 470px;">
-			<div class="postbox">
-			<h3><?php _e("General Settings", 'pxslider'); ?></h3>
-				<div class="inside" style="padding: 10px;">
+		
+		<?php
+			if(mkdir(PXSLIDERPATH.'/tmp')){
+			   rmdir(PXSLIDERPATH.'/tmp'); 
+			}
+			else{
+				_e('<small class="pxs_oopserr">oops!!! Seems like the directory permission are not set right so you may see some distortion in images.<br/>Please set the directory permission for the folder "thumb" inside px-slider plugin directory to 777.</small>','pxslider');
+			}
+		?>
+		
+		<div id="poststuff">
+			<div class="postbox" id="pxslider_wrap">
+				<div class="handlediv" title="Click to toggle"><br/></div>
+				<h3 class="hndle"><span><?php _e("General Settings", 'pxslider'); ?></span></h3>
+				<div class="inside" style="padding: 10px;">		
 					<input type="hidden" name="settings-updated" value="true">
 					<table class="pxs_admintbl">
-						<tr><td><?php _e("Select Category",'pxslider'); ?></td><td><?php wp_dropdown_categories( array( 'show_option_all' =>'' ,'taxonomy' => 'category','id'=>'px_catid','name' => 'pxslider_options[px_catid]','selected' =>$options['cat_id'] )); ?></td></tr>
-						<tr><td><?php _e("No. of posts",'pxslider'); ?></td><td><input type="text" name="pxslider_options[no_of_posts]" value="<?php echo $options['no_of_posts'] ?>" size="2" />&nbsp;<small>(<?php _e("default: 3",'pxslider'); ?>)</small></td></tr>
+					
+						<thead>
+							<tr><td><?php _e("Select Category",'pxslider'); ?></td><td><?php wp_dropdown_categories( array( 'show_option_all' =>'' ,'taxonomy' => 'category','id'=>'px_catid','name' => 'pxslider_options[px_catid]','selected' =>$options['cat_id'] )); ?></td></tr>
+							<tr><td><?php _e("No. of posts",'pxslider'); ?></td><td><input type="text" name="pxslider_options[no_of_posts]" value="<?php echo $options['no_of_posts'] ?>" size="2" />&nbsp;<small>(<?php _e("default: 3",'pxslider'); ?>)</small></td></tr>
+						</thead>
+						
+							<tr><td><?php _e("Custom Images",'pxslider'); ?></td><td>&nbsp;<input type="checkbox" id="pxs_custmImgs" name="pxslider_options[customImgs]" <?php if($options['customImgs']){ ?> checked <?php } ?> value="true"/> <label for="pxs_custmImgs" ><?php _e('Check it, if you want to use <b>"Custom Images instead of Category".</b>.','pxslider') ?></label></td></tr>						
+						
+						<tr class="pxs_custmimgs">
+							<td colspan="2">
+							<table class="pxs_admintbl" cellspacing="0">
+								<tr><td><?php _e("Custom Image-1 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img1url]" value="<?php echo $options['img1url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>
+								<tr><td><?php _e("Custom Image-2 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img2url]" value="<?php echo $options['img2url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>
+								<tr><td><?php _e("Custom Image-3 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img3url]" value="<?php echo $options['img3url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>
+								<tr><td><?php _e("Custom Image-4 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img4url]" value="<?php echo $options['img4url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>
+								<tr><td><?php _e("Custom Image-5 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img5url]" value="<?php echo $options['img5url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>
+								<tr><td><?php _e("Custom Image-6 URL",'pxslider'); ?></td><td><input type="text" class="pxs_uploadimg" name="pxslider_options[img6url]" value="<?php echo $options['img6url'] ?>" /><input class="pxs_uploadbtn button" type="button" value="Upload Image" /></td></tr>	
+							</table>
+							</td>
+						</tr>
+					
 						<tr><td><?php _e("Select Bg Layers Set",'pxslider'); ?></td>
 						<td>
 							<label class="pxs_bglyrset <?php if($options['bglayerSet'] == "Set-1"){ echo "active";} ?>" for="pxs_bglyrset1" style="background:#e7e7e7 url('<?php echo plugins_url('images/',__FILE__) ?>set1.jpg');"><input type="radio" name="pxslider_options[bglayerSet]" <?php if($options['bglayerSet'] == "Set-1"){ echo "checked='checked'";} ?> value="Set-1" id="pxs_bglyrset1" ></label>
@@ -35,12 +65,15 @@ function pxslider_admin_page(){
 						<tr><td><?php _e("Thumbnail Rotation",'pxslider'); ?></td><td><select name="pxslider_options[thumbRotation]"><option value="true" <?php selected('true', $options['thumbRotation']); ?>><?php _e("Yes",'pxslider'); ?></option><option value="false" <?php selected('false', $options['thumbRotation']); ?>><?php _e("No",'pxslider'); ?></option></select></td></tr>
 						<tr><td><?php _e("Show navigation buttons",'pxslider'); ?></td><td><select name="pxslider_options[navigation]"><option value="true" <?php selected('true', $options['navigation']); ?>><?php _e("Yes",'pxslider'); ?></option><option value="false" <?php selected('false', $options['navigation']); ?>><?php _e("No",'pxslider'); ?></option></select></td></tr>
 						<tr><td><?php _e("Circulation",'pxslider'); ?></td><td><select name="pxslider_options[circular]"><option value="true" <?php selected('true', $options['circular']); ?>><?php _e("Yes",'pxslider'); ?></option><option value="false" <?php selected('false', $options['circular']); ?>><?php _e("No",'pxslider'); ?></option></select></td></tr>
-						<tr><td colspan="2"><input type="submit" name="parallax_slider_submit" class="button" value="<?php _e('Save Settings','pxslider') ?>" /></td></tr>
+						<tr><td colspan="2"><br/><input type="submit" name="parallax_slider_submit" class="button button-primary" value="<?php _e('Save Settings','pxslider') ?>" /></td></tr>
 					</table>
 				</div>
 			</div>
 		</div>
 	</form>
+	
+	<iframe class="pxslider_iframe" src="http://www.sketchthemes.com/sketch-updates/plugin-updates/px-slider-lite/pxslider.php" width="250px" height="465px" scrolling="no" ></iframe> 
+</div>
 <?php
 }
 function pxslider_updates(){
@@ -48,6 +81,13 @@ $update_options = $_REQUEST['pxslider_options'];
 	$updates = array(
 	'cat_id' => $update_options['px_catid'],
 	'no_of_posts' =>$update_options['no_of_posts'],
+	'customImgs' =>$update_options['customImgs'],
+	'img1url' =>$update_options['img1url'],
+	'img2url' =>$update_options['img2url'],
+	'img3url' =>$update_options['img3url'],
+	'img4url' =>$update_options['img4url'],	
+	'img5url' =>$update_options['img5url'],
+	'img6url' =>$update_options['img6url'],	
 	'bglayerSet' =>$update_options['bglayerSet'],
 	'customBgs' =>$update_options['customBgs'],
 	'bg1url' =>$update_options['bg1url'],

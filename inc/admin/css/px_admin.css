@@ -1,7 +1,11 @@
 /*-- PX Slider Admin Style -----------
 ------------------------------------*/
+#pxslider_wrap{width:570px;}
 .pxs_admintbl td{padding:5px 0px;}
 .pxs_admintbl td:first-child{width:150px;}
 .pxs_admintbl .pxs_bglyrset{border-radius: 2px;border: 5px solid #e4e4e4;display: block;height: 18px;margin: 8px 0;padding: 19px;text-align: center;width: 160px;}
 .pxs_admintbl .pxs_bglyrset input{display:none;}
 .pxs_admintbl .pxs_bglyrset.active{border-color:#0D5B7C;border-width: 5px;}
+.pxs_admintbl  .pxs_uploadimg{width:250px;}
+.pxs_oopserr{color:red;}
+.pxslider_iframe{left: 765px;position: fixed;top: 80px;}
