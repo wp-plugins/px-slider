@@ -1,10 +1,10 @@
 === PX Slider ===
-Contributors: rahulbrilliant2004, tikendramaitry, Nishant Jain
+Contributors: tikendramaitry, rahulbrilliant2004, Nishant Jain
 Donate link: http://www.wpfruits.com
 Tags: parallax slider, cool parallax slider, slider plugin, plugin
 Requires at least: 2.8
-Tested up to: 3.5
-Stable tag: 1.2.0
+Tested up to: 3.6
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
    
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Try this an awesome Parallax Slider. Cool plugin plugin to add a parallax effect to your web page. One click install and quick backend settings make it easy to use for you.  
 Click here to see a Demo http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 
-=== Features ===
+= Features =
 
     Easy to use: Just select the category you want to display and it will start working for you
     Ready-made Templates: PX Slider comes with 4 ready-made templates for you to choose from.
@@ -27,7 +27,7 @@ Click here to see a Demo http://www.wpfruits.com/downloads/wp-plugins/px-slider-
 
 Read more instructions about how to use here http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 
-=== Features ====
+== Features ==
 
     Easy to use: Just select the category you want to display and it will start working for you
     Ready-made Templates: PX Slider comes with 4 ready-made templates for you to choose from.
@@ -67,17 +67,22 @@ An answer to that question.
 
 == Changelog ==
 
-Version 1.0.1
-Fixed some jquery and style issues with WordPress 3.5 version
+= Version 1.2.1 =
+* Fixed few issues with WordPress 3.6.
+* Fixed few styles and jQUery issues.
+* Fixed few functionality issues.
 
-Version 1.2.0
-Added Custom Images option in admin panel.
-Fix some jquery issues with WordPress 3.5 version.
-Upload your own images instead of going through categories
-Fixed timthumb issue. 
+= Version 1.2.0 =
+* Added Custom Images option in admin panel.
+* Fix some jquery issues with WordPress 3.5 version.
+* Upload your own images instead of going through categories
+* Fixed timthumb issue. 
+
+= Version 1.0.1 =
+* Fixed some jquery and style issues with WordPress 3.5 version
 
 == Upgrade notice ==
-Please upgrade quickly
+Please upgrade quickly.
 
 
 

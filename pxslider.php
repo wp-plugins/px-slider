@@ -4,7 +4,7 @@ Plugin Name:PX Slider
 Plugin URI: http://www.wpfruits.com/downloads/wp-plugins/px-slider-wordpress-plugin/
 Description: This plugin creates a Px slider with multiple background.
 Author: Nishant Jain, rahulbrilliant2004, tikendramaitry
-Version: 1.2.0
+Version: 1.2.1
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ function pxslider_defaults(){
 	    $default = array(
     	'cat_id' => 1,
     	'no_of_posts' =>3,
-		'customImgs' =>'false',
+		'customImgs' =>0,
 		'img1url' =>'',
 		'img2url' =>'',
 		'img3url' =>'',
@@ -26,10 +26,10 @@ function pxslider_defaults(){
 		'img5url' =>'',
 		'img6url' =>'',		
 		'bglayerSet' =>'Set-1',
-		'customBgs'=> 'false',
-		'bg1url'=>plugins_url('images/slide1.jpg',__FILE__),
-		'bg2url'=>plugins_url('images/slide1.jpg',__FILE__),	
-		'bg3url'=>plugins_url('images/slide1.jpg',__FILE__),	
+		'customBgs'=> 0,
+		'bg1url'=>'',
+		'bg2url'=>'',	
+		'bg3url'=>'',	
     	'auto_play' =>5000,
 		'slide_speed' =>1000,
     	'thumbRotation' => 'true',
@@ -42,7 +42,20 @@ return $default;
 register_activation_hook(__FILE__,'pxslider_plugin_install');
 function pxslider_plugin_install() {
     add_option('pxslider_options', pxslider_defaults());
+	pxslider_plugin_activate();
 }	
+add_action('admin_init', 'pxslider_plugin_redirect');
+function pxslider_plugin_activate() {
+    add_option('pxslider_plugin_do_activation_redirect', true);
+}
+
+function pxslider_plugin_redirect() {
+    if (get_option('pxslider_plugin_do_activation_redirect', false)) {
+        delete_option('pxslider_plugin_do_activation_redirect');
+        wp_redirect('admin.php?page=pxslider');
+    }
+}
+
 // Hook for adding admin menus
 add_action('admin_menu', 'pxslider_plugin_admin_menu');
 function pxslider_plugin_admin_menu() {

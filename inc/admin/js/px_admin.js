@@ -48,3 +48,11 @@ jQuery(document).ready(function(){
 	});
 
 });
+function wp_jsvalid(){
+	var a = document.getElementById('mce-EMAIL').value;
+	if(a==""){
+		alert('Please enter your E-mail ID.');
+		return false;
+	}
+	return true;
+}

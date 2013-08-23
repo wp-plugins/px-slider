@@ -106,7 +106,6 @@ if($px_speed =="" || $px_speed==0){$px_speed = 1000;}
 	}// if custom images checkbox is checked
 	
 	else{
-	echo $options['pxs_custmImgs'];
 		query_posts('order=desc&cat=' . $options['cat_id'] . '&posts_per_page= ' . $px_nop . '');
 		if (have_posts()) : ?>	
 			<div id="px_slider" class="pxs_category">
