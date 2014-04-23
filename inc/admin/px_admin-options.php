@@ -3,7 +3,7 @@
 //---------------------------------------------------------
 function pxslider_admin_page(){
 	global $px_message; ?>
-	<div class="wrap" style="width:820px;"><div id="icon-options-general" class="icon32"><br /></div>
+	<div class="wrap" style="width:820px;position: relative;"><div id="icon-options-general" class="icon32"><br /></div>
 	<?php if(isset($px_message) && $px_message) { ?><div class="updated" id="px_message"><p><strong><?php _e($px_message,'pxslider'); ?></strong></p></div><?php } ?>
 	<h2><?php _e('PxSlider '.pxs_get_version().' options Page','pxslider'); ?></h2>
 	
@@ -226,8 +226,7 @@ function pxslider_admin_page(){
 	<?php wp_nonce_field('update-options'); ?>
 	<form method="post">
 	<?php $options = get_option('pxslider_options'); ?>
-		<?php echo pxslider_update(); ?>
-		
+
 		<?php
 			if(mkdir(PXSLIDERPATH.'/tmp')){
 			   rmdir(PXSLIDERPATH.'/tmp'); 
@@ -236,6 +235,16 @@ function pxslider_admin_page(){
 				_e('<small class="pxs_oopserr">oops!!! Seems like the directory permission are not set right so you may see some distortion in images.<br/>Please set the directory permission for the folder "thumb" inside px-slider plugin directory to 777.</small>','pxslider');
 			}
 		?>
+		
+		<div class='pxslider_scode_wrapper'>
+			<h5 style='text-align:center' class='px_shortinfo'>
+				<?php _e("Use Shortcode", 'pxslider'); ?><br> 
+				<span style='font-size:14px;font-weight: bold;'><?php _e("[pxslider]", 'pxslider'); ?></span>
+				<br><?php _e(" ' or '", 'pxslider'); ?><br>
+				<?php _e("Use Template Code", 'pxslider'); ?><br> 
+				<span style='font-size:14px;font-weight: bold;'>&lt;?php if(function_exists('pxslider')){ pxslider(); } ?&gt;</span>
+			</h5>
+		</div>
 		
 		<div id="poststuff">
 			<div class="postbox" id="pxslider_wrap">
@@ -289,7 +298,7 @@ function pxslider_admin_page(){
 		</div>
 	</form>
 	
-	<iframe class="pxslider_iframe" src="http://www.sketchthemes.com/sketch-updates/plugin-updates/px-slider-lite/pxslider.php" width="250px" height="350px" scrolling="no" ></iframe> 
+	<iframe class="pxslider_iframe" src="http://www.sketchthemes.com/sketch-updates/plugin-updates/pxslider-lite/pxslider-lite.php" width="250px" height="370px" scrolling="no" ></iframe> 
 </div>
 <?php
 }

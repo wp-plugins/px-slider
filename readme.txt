@@ -2,9 +2,9 @@
 Contributors: tikendramaitry, rahulbrilliant2004, Nishant Jain
 Donate link: http://www.wpfruits.com
 Tags: parallax slider, cool parallax slider, slider plugin, plugin
-Requires at least: 2.8
-Tested up to: 3.6
-Stable tag: 1.2.1
+Requires at least: 3.0
+Tested up to: 3.9
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
    
@@ -57,19 +57,31 @@ An answer to that question.
 
 == Changelog ==
 
+= Version 1.2.2 =
+
+* Fixed few styles and jQuery issues.
+* Compatible with the WordPress latest version (3.9).
+
 = Version 1.2.1 =
+
 * Fixed few issues with WordPress 3.6.
 * Fixed few styles and jQUery issues.
 * Fixed few functionality issues.
 
 = Version 1.2.0 =
+
 * Added Custom Images option in admin panel.
 * Fix some jquery issues with WordPress 3.5 version.
 * Upload your own images instead of going through categories
 * Fixed timthumb issue. 
 
 = Version 1.0.1 =
+
 * Fixed some jquery and style issues with WordPress 3.5 version
+
+= Version 1.0.0 =
+
+* Initial release.
 
 == Upgrade notice ==
 Please upgrade quickly.
