@@ -1,5 +1,5 @@
 === PX Slider ===
-Contributors: tikendramaitry, rahulbrilliant2004, Nishant Jain
+Contributors: tikendramaitry, rahulbrilliant2004
 Donate link: http://www.wpfruits.com
 Tags: parallax slider, cool parallax slider, slider plugin, plugin
 Requires at least: 3.0
